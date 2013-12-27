@@ -1234,6 +1234,7 @@ let
 
   libestr = callPackage ../development/libraries/libestr { };
 
+  libtcod = callPackage ../development/libraries/libtcod { };
   libtirpc = callPackage ../development/libraries/ti-rpc { };
 
   libshout = callPackage ../development/libraries/libshout { };
