@@ -18,6 +18,7 @@
 , mpg123Support ? true, mpg123
 , aacSupport ? true, faad2
 , pulseaudioSupport ? true, pulseaudio
+, gmeSupport ? true, game-music-emu
 , icuSupport ? true, icu
 }:
 
@@ -57,6 +58,7 @@ in stdenv.mkDerivation rec {
     ++ opt aacSupport faad2
     ++ opt zipSupport zziplib
     ++ opt pulseaudioSupport pulseaudio
+    ++ opt gmeSupport game-music-emu
     ++ opt icuSupport icu;
 
   configureFlags =
@@ -82,6 +84,7 @@ in stdenv.mkDerivation rec {
       (mkFlag pulseaudioSupport "pulse")
       (mkFlag stdenv.isDarwin "osx")
       (mkFlag icuSupport "icu")
+      (mkFlag gmeSupport "gme")
       "--enable-debug"
     ]
     ++ opt stdenv.isLinux
